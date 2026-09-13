@@ -16,7 +16,7 @@ function App() {
 
   // Load the technology list from the local JSON file on first render.
   useEffect(() => {
-    fetch("/technologies.json")
+    fetch(`${import.meta.env.BASE_URL}/technologies.json`)
       .then((res) => res.json())
       .then((data: Technology[]) => {
         setTechnologies(data);
