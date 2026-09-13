@@ -1,2 +1,29 @@
 @import "tailwindcss";
-@plugin "daisyui";
+
+/*
+  Single source of truth for the brand gradient (orange -> pink -> violet).
+  Change ONLY this variable and the brand name, hero heading highlight,
+  and every primary button re-theme together automatically.
+*/
+:root {
+  --brand-gradient: linear-gradient(90deg, #f97316 0%, #ec4899 55%, #7c3aed 100%);
+}
+
+.brand-gradient-text {
+  background-image: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-gradient-bg {
+  background-image: var(--brand-gradient);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-neutral-50 text-neutral-900;
+}
